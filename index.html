@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Password Generator</title>
+  </head>
+  <body onload="load_passes()">
+    <div id="container">
+      <div id="header">
+      <h1>Password Generator</h1>
+        <p>Select minimum security margin (in bits): </p>
+        <div id="entropy-toolbar">
+          <input type="radio" name="entropy" value="64" id="rtb1" onclick="load_passes()"><label id="entropy-55" for="rtb1">64</label>
+          <input type="radio" name="entropy" value="128" id="rtb2" onclick="load_passes()" checked><label id="entropy-60" for="rtb2">128</label>
+          <input type="radio" name="entropy" value="256" id="rtb3" onclick="load_passes()"><label id="entropy-65" for="rtb3">256</label>
+          <input type="radio" name="entropy" value="384" id="rtb4" onclick="load_passes()"><label id="entropy-70" for="rtb4">384</label>
+        </div>
+      </div>
+
+      <div>
+          <p id="random-pass" class="password"></p>
+          <div class="stats">
+            <span id="random-entropy"></span>
+            <span id="random-length"></span>
+          </div>
+      </div>
+    </div>
+
+    <!-- core functions -->
+    <script src="js/main.js"></script>
+
+    <script>
+      function load_passes() {
+        generate_random(10);
+      }
+    </script>
+  </body>
+</html>
